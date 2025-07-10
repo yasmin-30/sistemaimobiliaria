@@ -5,7 +5,6 @@
 
 class Corretor {
 public:
-    static int proximoId;
     int getId() const;
     std::string getTelefone() const;
     bool isAvaliador() const;
@@ -16,6 +15,7 @@ public:
     Corretor(std::string telefone, bool avaliador, double lat, double lon, std::string nome);
 
 private:
+    static int proximoId;
     int id;
     std::string telefone;
     bool avaliador;
