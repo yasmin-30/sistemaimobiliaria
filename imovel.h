@@ -7,25 +7,27 @@ enum Tipo {Casa, Apartamento, Terreno};
 
 class Imovel{
     private:
+
         static int nextId;
         int id;
-        Tipo tipo; 
+        Tipo tipo;
         int proprietarioId;
         double lat;
         double lng;
-        std::string endereco;
         double preco;
+        std::string endereco;
 
     public:
-        Imovel(Tipo tipo, int proprietarioId, double lat, double lng, std::string endereco, double preco);
+        Imovel(std::string tipo, int proprietarioId, double lat, double lng, double preco, std::string endereco);
         ~Imovel();
-        int getId();
-        Tipo getTipo();
-        int getProprietarioId();
-        double getLat();
-        double getLng();
-        std::string getEndereco();
-        double getPreco();
+        int getId() const;
+        Tipo getTipo() const;
+        int getProprietarioId() const;
+        double getLat() const;
+        double getLng() const;
+        std::string getEndereco() const;
+        double getPreco() const;
+        void setTipo(std::string tipo);
 };
 
 #endif
