@@ -5,6 +5,7 @@
 #include "cliente.h"
 #include "corretor.h"
 #include "gerenciamento.h"
+#include "agenda.h"
 
 using namespace std;
 
@@ -63,6 +64,8 @@ int main() {
         Imovel imovel(tipo, propId, lat, lon, preco, endereco);
         g.addImovel(imovel);
     }
+    
+    gerarAgenda(g);
     
     return 0;
 }
