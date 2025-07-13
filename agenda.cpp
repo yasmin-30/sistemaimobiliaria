@@ -8,7 +8,8 @@
 constexpr double EARTH_R = 6371.0;
 
 double haversine(double lat1, double lon1, double lat2, double lon2) {
-    auto deg2rad = [](double d) { return d * M_PI / 180.0; };
+    const double PI = 3.141592653589793;
+    auto deg2rad = [PI](double d) { return d * PI / 180.0; };
     double dlat = deg2rad(lat2 - lat1);
     double dlon = deg2rad(lon2 - lon1);
     double a = pow(sin(dlat / 2), 2) +
@@ -62,7 +63,7 @@ void gerarAgenda(const Gerenciamento& g) {
 
             const Imovel* prox = lista[indiceProximo];
             double dist = haversine(atualLat, atualLon, prox->getLat(), prox->getLng());
-            int tempoDeslocamento = static_cast<int>(round(dist * 2));
+            int tempoDeslocamento = static_cast<int>((dist * 2));
 
             minuto += tempoDeslocamento;
             hora += minuto / 60;
