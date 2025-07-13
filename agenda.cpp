@@ -82,7 +82,7 @@ void gerarAgenda(const Gerenciamento& g) {
             visitado[indiceProximo] = true;
         }
 
-        if(i + 1 < avaliadores.size){
+        if(i + 1 < avaliadores.size()){
             std::cout << std::endl;
         }
     }
